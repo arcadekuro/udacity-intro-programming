@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            code {
+               font-size: 15px;
+            }
+
+            #first-image {
+                height: 200px;
+                width: 320px; 
+            }
+            #second-image {
+                height: 200px;
+                width: 320px;
+            }
+            .h2-code{
+                font-size: 20px; 
+            }
+        </style>
+        <title> Udacity notes</title>
+    </head>
+    <body>
+        <main>
+            <div id="html">
+            <h1>Introduction to programming</h1>
+            <h1>HTML</h1>
+            <h2> Web pages and servers </h2>
+            <p>Most of the time your browser recieves web pages by communicating with <strong>servers</strong> over the internet.
+            Servers are computers that aren't fundamentally different from a normal computer, BUT they have programms running on them 
+            that answer browser requests. The power of the internet is that you can connect to a file or document on different server. 
+            
+            A web page can contain information, videos, images, fonts or program code from the same web server or other web servers.
+            When you go to a webpage or follow a link your browser makes a request to the server asking for a particular document by
+            name.  The server sends a response back to the browser containing that document. Or if it can't find that document, 
+            it sends an error message instead. The rules for how these responses work are called the <strong>Hypertext Transfer Protocol (HTTP)
+            </strong> This is why web addresses start with HTTP or HTTPs (Hypertext Transfer Protocol) - telling the browser how to talk to the server. 
+            The difference between addresses with http: and https: is whether the browser uses 
+            encryption to keep your data private (the S stands for Secure).
+
+            When first making a website you won't need this yet, as you can open local html files in your browser. However, later when 
+            <i>publishing</i> a website to the world, this will require uploading the file to a web server.<br><br>
+
+            <strong>So what goes into web page?</strong><br>
+            Html or Hypertext markup language provides the structure and text for web pages. When your browser is opened, the first 
+            thing that a server will send to it is a piece html. 
+            </p>
+
+            <h2 id="html-exp"> HTML and programming </h2>
+            <p>HTML is a good place to start thinking about programming because it lets you practice ideas that are essential
+                to programming while allowing for quick feedback on what you're learning in a web browser. There are some key concepts 
+                in programming:
+                <ol>
+                    <li><strong>Syntax:</strong> The grammer rules of a language - how you put the code togehter</li>
+                    <li><strong>Formalism:</strong> "computers are stupid" - computers take code completely literally (like Drax from garudians of the galaxy!) </li>
+                    <li><strong>Nesting:</strong> where information is organized in layers, or where objects contain other similar objects. </li>
+                </ol>
+                <p>There is a lot of information to help in the learning process and documentation is widely available through a quick google search. You can learn
+                    a lot about HTML by looking it up on <a href="https://developer.mozilla.org/">The Mozilla Developer Network</a>
+                </p>
+            
+            <h2 id="text-editors">Text editors</h2>
+            <p>HTML and programs are written in text files. Text files contain nothing but characters. No special typeography, photos, icons or other
+            images basically anything you could write on an old fashioned type writer. HTML files are only made up of text and the layout
+            of the web page on the browser shown to a user, is put together based on the code in that text file. A text editor edits 
+            plain basic text files. 
+            There are various different text editor programs specfically made for creating code. These include <a href="https://atom.io/">Atom</a>
+            (created by Github) and <a href="https://code.visualstudio.com/">VS code</a> (created by microsoft)</p>
+            <p> When you load a file into an programmers text editor, you'll often see it displayed with colours and special formating which is called
+            syntax highlighting. This is not diplayed in the file itself but helps to use the correct grammer when editing files.
+            When saving a file it's conventional to use a particular file extension or ending which indicates the file type( i.e .py or .html). This helps
+            editors and browser treat the file correctly.  
+            </p>
+
+            <h2>The job of html</h2>
+            <p>Html documents are the building blocks of the web. The web is basically made up of these documents and they can do a number of things.
+            This is broken down into different parts.</p>
+            <ul>
+                <li><strong>Text</strong> that the user will actually read in the browser</li>
+                <li><strong>Markup</strong> which tells the browser what text should look like or how it's arranged and within markup there can be...</li>
+                <li><strong>References</strong> to include other documents and files like images and videos</li>
+            </ul>
+
+            <h2>Markup</h2>
+            <p>Markup is just text that has a special meaning. In html most of the text looks like this: <br><br> 
+            <code>This is a &lt;strong&gt; awesome &lt;/strong&gt; example of html. </code></p>
+            <p>It has less than and greater than signs that set off the name of a <strong>keyword</strong> such as <code>'strong'</code>. The word
+            strong inside these symbols is a tag. This whole unit with two matching tags and some text in between is called
+            an <strong>element.</strong></p>
+            <p> Another example is the <code>'em'</code> tag: <br><br><code>&lt;em&gt; emphasise! &lt;/em&gt; <br> <br></code> which stands for <strong>emphasis.</strong>
+            It means the text inside should be emphasised which usually means it's displased in italics.</p> The contents of the element 
+            will be displayed with these characteristics inside the browser. Every element starts and ends with a tag. 
+            The first tag is called and opening (or start) tag which marks the begining of the element, the one at the end is a closing(or end) tag. 
+            The tags always come in pairs otherwise an syntax error will occur. N.B developers sometimes refer to a whole element as a tag and vice versa
+            but you can usually tell what they mean by the context.
+
+            <h2>Breaks and empty elements</h2>
+            <p><strong>Whitespace</strong> includes spaces, tabs, and line breaks. When the browser displays an HTML file, it treats a run of whitespace as a single space character. 
+            In order to create a line break that will show up in the browser, use the <code>&lt;br&gt;</code> tag.
+            There is no closing tag for the <code>br</code> tag because there are no contents inside a line break.
+            Elements like this are called <strong>void</strong> or <strong>empty</strong> elements.<br>
+            One other example of this is:<br><br>
+            <code>&lt;img src="https://website.com/200.png alt="wesbite-logo"&gt;</code></p>
+
+            <h2>Paragraphs</h2>
+            The Br tag is great for creating line pages in poems for examples. However a lot of text across the internet are articles 
+            journals and information that are contained in paragraphs. To make a pragraph in html we use the <code>&lt;P&gt;</code> element which 
+            stands for paragraph. It is a regular tag, and whenver you're wiring regular elements in html the p tag sould be used.
+            <p></p>
+
+            <h2>Typographic elements</h2>
+            <p>Typographic elements are used to say that the browser should display text in a different way</p>
+            <p><sub>example1</sub><sup>example2</sup></p>
+            <ul>
+                <li><code>&lt;mark&gt;&lt;/mark&gt;</code> Highlights text</li>
+                <li><code>&lt;sup&gt;&lt;/sup&gt;</code> Makes text superscript</li>
+                <li><code>&lt;sub&gt;&lt;/sub&gt;</code> Makes text subscript </li>
+                </ul>
+            <p>Originally, HTML started out as a tool for scientific and academic work; and these are really useful for science and math,
+                 like writing x2+3x+4 = 1 or chemical formulas like H2O.</p>
+
+                
+            <h2>Nested elements</h2>
+            <p>Nesting is the idea that objects can lie within others. Similarly to a russian doll set. Elements on a html page can go
+                inside other elements however, they must follow certain rules.<br><br>
+                The top level elements in a html document are things like; paragraphs, headings and big divions.  Inside the top level elements
+                smaller elements such as bold, italicising, ordered/unordered lists etc. Any of the smaller elements can be put inside
+                another too. For instance you can have text that is both emphasised and highlighted.
+                This comes with some exceptions i.e a paragrpah can't be nested inside a paragrpah and elements cannot overlap.
+
+            <h2>Headings</h2>
+                <p>HTML has several elements for headlines or section headings, starting with <code>&lt;h1&gt;</code> 
+                for the largest headlines and going down to <code>&lt;h6&gt;</code>for the smallest.
+                Like with the p element, heading elements create a little bit of space (margin) around themselves.</p>
+            
+
+            <h2>Block and inline</h2>
+            <p>There are two different ways in html to break text into multiple lines. the <code>&lt;br&gt;</code> and <code>&lt;p&gt;</code>  element. So what's the difference?
+                The <code>&lt;br&gt;</code> tag is just to break the line. The paragraph tag not only contains the text, but also creates a invisible box around the text
+                which is called a <strong><mark>block</mark></strong>. 
+                This tells the browser to create a box around the text, blocks are heaviy involved in how the browser lays out text on the screen and It have both
+                height and width.
+                Elements that don't create this block are called inline elements. Below are some examples of both:<br><br>
+                <img src="./image.png" alt="element-types" id="first-image"><br><br>
+                For reference, there is a full list of all the block and inline elements in html:</p>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements">Block level elements</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements">Inline elements</a></li>
+                </ul>
+            
+            
+            <h2>The div element</h2>
+            <p>The <code>&lt;div&gt;</code> is short for division, because that's what this element is for—you can use it to divide up the page
+                into different sections. Like the paragraph <code>&lt;p&gt;</code> element, the division div element has an invisible box around it—and just like <code>&lt;p&gt;</code>
+                 it can have a border, a margin, a width, a height, and so on. But a <code>&lt;p&gt;</code> element is specifically meant to contain text.
+                 In contrast the <code>&lt;div&gt;</code> element is a generic container for whatever other elements you might want to put inside and you can use it
+                 to organise the content, dividing the page into sections.
+            </p>
+
+            <h2>Lists and implied close tags</h2>
+            <p>There are a few HTML elements that are always used inside certain other elements, they don't make sense on their own.
+                For example the list or <code>&lt;li&gt;</code> element is one item on a list (e.g table of contents). A list item
+                can not display on its own. There are two types of lists, ordered and unordered.
+                Ordered lists are usually displayed with numbers or letters, whilst unordered diplay bullet points. <br><br> 
+                <img src="./image2.png" alt="lists" id="second-image"><br><br>
+                <strong>So why can't list items be displayed outside of a list?</strong><br>
+                An <code>&lt;ol&gt;</code> and a <code>&lt;ul&gt;</code> list are displayed differently. Without the context, the browser
+                wouldn't know whether to display a bulleted list or numbered. However lists can be listed inside another list.
+                Because an <code>&lt;li&gt;</code> element can only occur inside a list, html doesn't actually require a closing tag. However the 
+                <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> <strong><em>must</em></strong> have closing tags.
+            </p>
+            <h2>Web addresses</h2>
+            <p>The web wouldn't be the web without web addresses, every page, image and link has one. This is how your browser links
+                from one page to another. They're also a big part of how users tell their browser to go to a website in the first place. 
+                Whenever you put an image or link in your html, you'll do this using addresses. In the web standards there are technical terms
+                for these addresses. A web address is called a <strong>U</strong>niform <strong>R</strong>esource <strong>L</strong>ocator, also known
+                as a <strong>URL.</strong></p>
+                <ul>
+                    <li><strong>Uniform</strong>= standardised</li> 
+                    <li><strong>Resource</strong>= a file or other data object</li>
+                    <li><strong>Locator</strong>= address for finding something</li>  
+                </ul>
+                <p>This just means that it is an address that tells your browser how to locate a particular resource, a file for instance, in a standardised way.
+                Meaning that it is consistent. URLs usually have http or https in front of www. This is not always the case, the browser will still guess 
+                you want to go a website. However in a html file more informaiton is needed - this is where <strong><em>fully qualified/absolute urls come in.</em></strong><br><br>
+                <code>&lt;a href="https://website.com"&gt;</code><br><br> HTTP/HTTPS tells the browser whether to use a secure encrypted connection to the webserver.
+                The URL of a file on your local system will start with file instead. All three options are all protocols(ways that the browser can get something.)<br><br>
+                '://' - seperates the protocol from the domain name. In file documents there will be no domain name as it is not hosted on a web server. 
+                After this is the file path - the name of the directory and the file. 
+                When you're linking to the top page (or home page) of a site, the URL does not need a file path after the domain name—so you will just see a single slash at the end of the address:<br><br>
+
+                <strong>http://en.wikipedia.org/</strong><br>
+                And often this slash will be omitted altogether:<br><br>
+
+                <strong>http://en.wikipedia.org</strong><br>
+                This would still be considered a fully-qualified URL.<br><br>
+
+                In contrast, if we look at the URL for a file on your local system, we must give the file path—in fact, most of the URL is the file path:<br><br>
+
+                <strong>file:///Users/Kelly/notes.html</strong><br>
+                If we took away the file path from the above, we would just have:<br><br>
+
+                <strong>file://</strong><br>
+                Which is definitely not a fully qualified URL.</p><br><br>
+
+                <h2>Links and the <code class="h2-code">&lt;a&gt;</code> tag</h2>
+                <p>The web is built on of hypertext which means that you have textual documents BUT, they also reference other docunents. On the web page
+                    these are called links. The element for making a link is an anchor - an <code>&lt;a&gt;</code> element which anchors the link on the page.
+                    The opening tag for the <code>&lt;a&gt;</code> element has an extra piece of code - <code>href</code>, like below: <br><br>
+                    <code>&lt;a href="https://example.net"&gt;The example page&lt;/a&gt;</code><br><br>
+                    This is an example of a html attribute and it gives the html element extra meaning. The name <code>href</code> stands for 
+                    <strong>H</strong>ypertext <strong>R</strong>eference. It is used with the <code>&lt;a&gt;</code> tag and a few other 
+                    tags that link to a document. Attributes like href only go in the opening tag at the beginning of an element. The contents 
+                    of the element becomes the name a user clicks on to access the link, followed by a closing a tag.
+                    The <code>&lt;a&gt;</code> element is an inline element. It doesn't create a box on the page. Links
+                    normally have the appearance of a specially highlighted piece of text.
+                </p>
+
+                <h2>Adding images</h2>
+                <p>Images are a large part of why the web is so successful. To incude images there is a html element to do this. which is 
+                    the <code>&lt;img&gt;</code> tag, short for image. It works much like the anchor tag for links but with some important differences.
+                    The anchor tag uses a single href attribute and the value for this attribute is the URL of the page we would link to.
+                    But the <code>img</code> elemnent uses two attributes. This is the <code>src and alt</code> attributes.</p> <br>
+                    <ol>
+                        <li><code>src</code> stands for "source" and it's the url of the image you want to appear on your webpage.</li>
+                        <li><code>alt</code> stands for alternate and it's the text description of that image.</li>
+                    </ol>
+                    <p>Both of these attributes must be included as the source tells the browser the source of the image, and the alternate 
+                    tells the browser what text to show if it can't display the image. For example alt text will be used if the image is missing 
+                    from the server or if the users connection stops working before the image can be loaded, or for the visually impaired. 
+                    The img element does not copy the image file into the html file, it only tells the browser where to find the image file. 
+                    The image file still has to be some where (either the local computer or a web server).
+                    The img element is a void element like br. There are no textual content or close tag for it. 
+                    Many websites have images that are also links: the browser displays an image, but then the user can click on that image to go to a different page. 
+                    The best way to do this would be to put an image element inside an anchor element like so: <br><br>
+                    <code>&lt;a href="https://google.com"&gt;&lt;img src="glogo.png" alt="google logo"&gt;&lt;/a&gt;</code>    
+                </p>
+
+                <h2>Files and relative URLs</h2>
+                <p>So far when adding images to html we have referenced urls from the internet and different servers. But what if the image is on your local server?
+                    You can put the file name in the image tag, as the browser looks at the src and when a full URL isn't seen (no ://) the browser has a rule
+                    for what to do in this instance. The browser will look for the file name as a variation of the HTML document's own
+                    URL. This is calle a relative URL, the browser will look for the img file in the same directory as your html doc.
+                    This allows for a lot less typing and relative URLs are the reson why links only work by inputing https:// first. Because
+                    in HTML a URL with no :// in it is always treated as a relative url.
+                    Websites like <a href="https://placebear.com/">placebear.com</a> and <a href="https://placekitten.com">placekitten.com</a> are designed to make this super easy.
+                    All you have to do to get an image of any given size is put the width and height of the image at the end of the URL, 
+                    as in <code>https://placebear.com/200/300.</code>
+                    In summary The URL of an image may be an absolute URL, such as http://placebear.com/800/600, or it may be a relative URL such as images/wolves.jpg.
+                </p>
+
+                <h2>The !DOCTYPE tag</h2>
+                <p>So far we have covered html fragments - snippets of the markup and syntax. A browser can display this but there a some things
+                    to add to make them into a full html document i.e. a webpage.
+                    How does the browser know what type of file it is? The file extension only tells <em>part</em> of that story. There have been various
+                    different versions of html. We indicate what type of html we're using through a DOCTYPE tag, which is put at the very top of the document.
+                    It looks like this:<br><br>
+                    <code>&lt;!DOCTYPE html&gt;</code><br><br>
+                    This tag tells the browser that we're intending for this document to be treated as <em><strong>modern</strong></em> html as opposed to 
+                    those older version. This prevents a lot of problems when your html becomes more complex. Without this tag, browsers will go into what's called
+                    "quirks" mode. Which is trying to be more compatible with older forms of HTML. 
+                </p>
+
+                <h2>Documents: Head and Body</h2>
+                <p>A full html documents actually has two parts a <strong>head</strong> and <strong>body</strong>. Every element so far 
+                lives in the <code>&lt;body&gt;</code> tag. This is where the content goes. The <code>&lt;head&gt;</code> is where we put certain pieces of 
+                important information about the document. Both the <code>&lt;head&gt;</code> and the <code>&lt;body&gt;</code> occur in a single
+                enclosed element called the <code>&lt;html&gt;</code> tag. <br>
+                Here are a few things that can occur in the head of the document:</p>
+                <ul>
+                    <li>The title - It tells the browser what title to put on a tab that's displaying the document. This is required</li> 
+                    <li>The style sheet information - Tell the browser things like what fonts, colors and design elements.
+                    <li>Scripts - programs that are run in the browser. This is how front-end web apps work</li>
+                    <li>Metadata - Other information about the page itself such as keywords for search engines (SEO)</li>
+                </ul>
+                <p>There is also information that can go on the html tag itslef. E.g. noting what human language your document is written in:<br><br>
+                <code>&lt;html lang="en"&gt;</code><br><br>
+                This is useful for programmes that try to understand or pronounce the contents of the documents such  as screen readers 
+                for visual impared readers. 
+
+                The grammar of HTML does not require that you literally write a <code>&lt;head&gt;</code> or <code>&lt;body&gt;</code> tag in your HTML code.
+                Many web developers do write these. However, if you don't, the browser will attempt to place them into your code itself.
+                It needs to put the head element around certain elements that belong there, such as title; and to put the body
+                element around the elements that form the document's body. This means that all the head elements must appear first, 
+                and the body elements after.
+                You can't have a head element, such as title, in the middle of your document.
+                </p>
+
+                <h2>Validating HTML</h2>
+                <P> Once you've written your document, how can you be sure that your file is spelled correctly and written grammatically.
+                    First you can load this in your browser however, whilst it may look fine in the browser it may have a mistake that your browser
+                    can deal with but other browsers can't. Fortunately there is  way to check you file to make sure the html syntax is correct. 
+                    There are tools called html validators that will check for all the details. Everything from tags being spelled correctly, to some of the 
+                    tricky nesting rules. The best known validatory is <a href="https://validator.w3.org/">https://validator.w3.org/.</a> run by the 
+                    <strong>W</strong>orld <strong>W</strong>ide <strong>W</strong>eb <strong>C</strong>onsortium (W3C). This is the organisation
+                    that writes the standards for html and other componenets of the web. 
+                    There are 3 ways to use the validator service:</p>
+                    <ol>
+                        <li>If you're web pade is on a public web server, you can give the URl and it will download and check the html</li>
+                        <li>Upload the file</li>
+                        <li>Copy from the editor and paste it in.</li>
+                    </ol>
+                    <p>The output will be a report detailing the errors in the html file if there are any. 
+                </P>
+            </div>
+
+            <div id="CSS">
+                <h1>Styling with CSS</h1>
+                <h2>Starting with style</h2>
+                <p>CSS or cascading style sheets is how web pages get all the colour, decoration and fonts. Using CSS you can improve the 
+                    look of html pages. 
+                </p>
+
+                <h2>Developer tools</h2>
+                <p>Something special built right into the web browser is called the <strong>'developer tools'</strong> and it's something that 
+                every web developer spends a lot of time with. Every browser has this built in. If you right click anywhere on a page and select inspect
+                this allows you to look at the HTML elements for everythin on this page. There are several different tabs:</p>
+                <ul>
+                    <li>Elements</li>
+                    <li>Console</li>
+                    <li>Sources</li>
+                    <li>Network</li>
+                    <li>Performance</li>
+                    <li>Styles</li>
+                    <li>Even listeners</li>
+                    <li>DOM Breakpoints</li>
+                    <li>Properties</li>
+                    <li>Acessibility</li>
+                </ul>
+                <p> Each of these tabs will let you look at a different aspect of what the browser is doing. For the meantime, the elements tab
+                    shows the HTML elements that make up the webpage. This looks a lot like the html source code. This elements view and  the rendered 
+                    web page are two different views of the same underlying data. The Elements tab isn't showing you the original HTML source code. It's showing you a sort of map or representation of how the browser sees the page.
+
+                    For instance, in Chrome, many pieces of text will show up in "double quotes", which aren't in the original source or in the rendered version of the page.
+                </p>
+                <h3>How to access Developer Tools in your browser</h3>
+                <ul>
+                    <li>Google</li>
+                    <ol>
+                        <li>Open the Chrome menu at the top right of the browser window (the three vertical dots), s
+                            elect and select Tools > Developer Tools, OR</li>
+                        <li>Right-click on any page element and select Inspect.</li>
+                    </ol>
+                    <li>Safari</li>
+                        <ol>
+                            <li>From the menu bar, select Safari > Preferences, and click Advanced.</li>
+                            <li>At the bottom of the box, check the "Show Develop menu in menu bar" checkbox.</li>
+                            <li>Choose Develop > Show Web Inspector.</li>
+                        </ol>
+                    <li>Mozilla Firefox</li>
+                        <li>From the menu bar, select Tools > Web Developer > Browser Console, OR</li>
+                        <li>Press Ctrl+Shift+J (Cmd+Shift+J on Mac).</li>
+                </ul>
+                <h2>Text to trees</h2>
+                <p>There are things in html source code that don't show up on the screen i.e. the literal text in the tags
+                    that make up a html element. There are also things that show up on the screen/browser that don't appear in the html file, 
+                    Such as the numbers in an ordered list. Between the html file and the browser, there is an intermediate step. The intermediate is 
+                    a <strong><em>Data structure</em></strong> - it is an organised map of what's going to end up on the page. It's also what
+                    developer tools lets us look at. Wnen the browser reads the HTML source
+                </p>
+            </div>
+
+        </main>
+    </body>
+</html>
