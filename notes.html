@@ -348,16 +348,23 @@
                             <li>Choose Develop > Show Web Inspector.</li>
                         </ol>
                     <li>Mozilla Firefox</li>
+                    <ol>
                         <li>From the menu bar, select Tools > Web Developer > Browser Console, OR</li>
                         <li>Press Ctrl+Shift+J (Cmd+Shift+J on Mac).</li>
+                    </ol>
+                        
                 </ul>
                 <h2>Text to trees</h2>
                 <p>There are things in html source code that don't show up on the screen i.e. the literal text in the tags
                     that make up a html element. There are also things that show up on the screen/browser that don't appear in the html file, 
                     Such as the numbers in an ordered list. Between the html file and the browser, there is an intermediate step. The intermediate is 
-                    a <strong><em>Data structure</em></strong> - it is an organised map of what's going to end up on the page. It's also what
-                    developer tools lets us look at. Wnen the browser reads the HTML source
-                </p>
+                    a <strong><em>Data structure</em></strong> - it is an organised map of what's going to end up on the page. When we make a change to the CSS 
+                    that doesn't change the structure of the HTML source code but it does change the source code in the data structure.
+                     It's also what developer tools lets us look at. Wnen the browser reads the HTML source it builds up a map in the computer memory of what all the elements are that it will need to put in the screen. This map shows which elements are nested inside other elements.
+                     Doing this step first makes it much more practical to lay out the elements on the screen. Like making an outline of the page. 
+                     This kind of structure is called a tree structure because each element can have brances coing out of it to other elements. For each element there will be branches going to the elements nested inside. Like the LI items inside an ol or ul. The particular tree strucure that the browser builds out of HTML is called the <strong><mark>DOM</mark></strong> or <strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel. The DOM has a tree structure for each HTML element, image, piece of text or other objects inside the web page.
+
+                <h2>Tree Structure</h2>
             </div>
 
         </main>
