@@ -381,6 +381,25 @@
                     <li> Though each node can have any number of branches going out, it can only have one branch coming in. </li>
                     <li> A new branch can never point to a node that's already in the tree.(another way of saying each node has only one parent) </li>
                 </ol>
+
+                <p> There are tree structures everywhere in computer science, and the DOM is just one example. </p>
+
+                <h2>Trees to Boxes</h2>
+                <a href="https://www.youtube.com/watch?v=fB3gUCkS0TI&feature=emb_logo">Video - Trees to Boxes</a>
+                <p> you can find the example shown in this video <a href="./example-css.html">here.</a> Earlier on we referenced that a browser takes a html document and turns this into a trees structure (the DOM). How does it get from here? into the 2D layout? Every element that appears on a page lands inside boxes and it is controlled by tree structure with a little help from the CSS. Whether the boxes are transformed horizontally or vertifcally can be controlled in the CSS. </p>
+
+                <h2>Styling HTML directly - <a href="https://www.youtube.com/watch?time_continue=1&v=7jNe0CduTXI&feature=emb_logo">Video</a></h2>
+                <p>One way we can add style to a website is to visit each node of the tree and add the style we want. There is a style attribute that we can put on html opening tags to do just that. an example of this is: <br><br>
+                <code>&lt;li style="colour:green"&gt; Trees</code><br><br>
+                The problem with doing it this way is that it's incredinly repitious. Also if there is a mistake in one place it is hard to catch. Generally in computing, if it is possible to avoid repeating yourslef then it should be done. This saves typing and reduces error. What CSS allows us to do is pull all the style elements out and put it into <code>&lt;style&gt; &lt;/style&gt;</code> elements within the head element. The style information we put here will be applied throughout the document and as the browser builds up the picture on screen fom the dom tree, it'll use these style rules to colour, shape and layout the page.</p>
+
+                <h2>N.B.</h2>
+                <p>By the way, when styles are applied directly to an HTML element using the style attribute, these are called <strong>inline styles.</strong>
+
+                    The idea is that the style is being applied directly in the same line as the HTML element that it is styling. (In contrast, when we use the style element, the style is separated—it's not in the same line.) </p>
+                <p>There are also other style elements such as <code> text align: center;</code> These attributes can be placed one after another within a HTML element. We seem to be using quotes whenever we have an attribute value (remember, the attribute value is the part that comes after the = sign). For example, when we make a link, we put quotes around the value of the href attribute:</p>
+
+
             </div>
 
         </main>
