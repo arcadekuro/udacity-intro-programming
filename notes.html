@@ -1,30 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <style>
-            code {
-               font-size: 15px;
-            }
-
-            #first-image {
-                height: 200px;
-                width: 320px; 
-            }
-            #second-image {
-                height: 200px;
-                width: 320px;
-            }
-            .h2-code{
-                font-size: 20px; 
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
         <title> Udacity notes</title>
     </head>
     <body>
+        <div id="sidebar">
+            <ul> 
+                <li> <a href="#html">HTML</a></li>
+            </ul>
+        </div>
         <main>
             <div id="html">
             <h1>Introduction to programming</h1>
-            <h1>HTML</h1>
+            <h1 id="html">HTML</h1>
             <h2> Web pages and servers </h2>
             <p>Most of the time your browser recieves web pages by communicating with <strong>servers</strong> over the internet.
             Servers are computers that aren't fundamentally different from a normal computer, BUT they have programms running on them 
@@ -397,7 +386,239 @@
                 <p>By the way, when styles are applied directly to an HTML element using the style attribute, these are called <strong>inline styles.</strong>
 
                     The idea is that the style is being applied directly in the same line as the HTML element that it is styling. (In contrast, when we use the style element, the style is separated—it's not in the same line.) </p>
-                <p>There are also other style elements such as <code> text align: center;</code> These attributes can be placed one after another within a HTML element. We seem to be using quotes whenever we have an attribute value (remember, the attribute value is the part that comes after the = sign). For example, when we make a link, we put quotes around the value of the href attribute:</p>
+                <p>There are also other style elements such as <code> text align: center;</code> These attributes can be placed one after another within a HTML element. We seem to be using quotes whenever we have an attribute value (remember, the attribute value is the part that comes after the = sign). For example, when we make a link, we put quotes around the value of the href attribute. The quotes indicate where an attibute value starts and stops, even if there are spaces inside it. Without the quotes, the browser can sometimes still figure out where the attribute value ends. So it's possible to get away with leaving the quotes off, in some cases.
+
+                 But if there is a space (and no quotes) then the browser will get confused and think the attribute value has ended right before that space.</p>
+
+                 <h3>So is CSS its own seperate language or is it just part of the HTML language?</h3>
+                 <p> We haven't talked about this too much, but CSS really is a different language from HTML. That means that it has its own syntax (or grammar), which is different from the syntax for HTML.</p>
+
+                 <h2>CSS syntax - <a href="https://www.youtube.com/watch?v=5LuhV8WNLc4&feature=emb_logo">Video</a> </h2>
+                 <p>A CSS rule-set is made up of two parts:</p>
+                 <ol>
+                     <li>SELECTOR = which HTML elements will the ruleset apply to?</li>
+                     <li>DECLERATION BLOCK = How will the ruleset modify these elements? - inside curl braces that contains rules.</li>
+                 </ol><br>
+                 <code> li { color: green; } </code><br>
+                 <p> The above is a CSS ruleset that will trun all of the list items green The selector is li and there is one entry in the declerator block. CSS rules are always written like this. </p>
+                 <code> .weird { <br>
+                     color: purple; <br>
+                     font-size: large; <br>
+                 </code><br>
+                 <p> The <code> .weird </code> selector will apply to any element with a class attribute equal to weird. Each of the rules in the decleration block have a description which is called the 'property' that the rule is affecting There is a colon followed by a value which is giving a property. The value is always followed by a semi-colon. The syntax of CSS doesn't look anything like the syntaz in HTML. This makes sense because they are accomplishing different things. A piece of html describes a tree structure made out of elements. A CSS delcleration highlights a particular element and here are styles to apply to it. </p>
+
+                 <h2>Selectors: <a href="https://www.youtube.com/watch?time_continue=17&v=i3lHUbFi7YI&feature=emb_logo">Type</a></h2>
+                 <p>So a CSS selector tells the browser whcih elements the rule will affect. There are a few different kinds of selectors that you can use.<br>
+                 The simplest selector type is a <strong><em>TYPE</em></strong> selector - just the name of one type of html element such as p, body, em etc. Type selectors are really useful when you want to apply a style widely across the web page.</p>
+                
+                 <h2>Selectors: Class and ID <a href="https://www.youtube.com/watch?time_continue=2&v=jR1m3gU-iBs&feature=emb_logo">vid</a></h2>
+                <p>You don't always want to style all elements of the same type in exactly the same way. For instance, if your document is an article with a sidebar. You may want to apply a different style to the paragraph elements versus in the sidebar. This can be done by placing a special attribute in the HTML tags and this is the <strong>class attribute.</strong>. In computer language a <strong>Class</strong>is a common word for <em>a group of things with the same characteristics</em> The way you apply a CSS ruleset to a class is to write a selector that starts with a dot (.). Classes are what you should use if there are several elements you want to apply a style to. If you know there will only be one element to apply the style to, you can make this clearer by using the <strong>ID attribute</strong> instead. There can only be one element with a particular id on the page. In contrast there can be any number of elements with the same class. Id values come from the same place that class values do, you make them up. To apply a style elements by id instead of class you need to use a hash # instead of dot selector.</p>
+
+                <h2>Selectors: <a href="https://www.youtube.com/watch?time_continue=1&v=KDr6KAfhTOk&feature=emb_logo">combining</a></h2>
+                <p>You may want to combine selectors i.e make em text red but only if part of a list part of the em. This is how you would do that<br><br>
+                <code>li em { <br>
+                color: red; }</code><br><br>
+                It is important to first write the parent element and then the child element. Together this selector means 'Select every em element that is a child of an Li element'. This kind of selector uses a space to created a <em>combined selector</em> This 'li space em' is called the <em>descendant selector</em> Want to learn much more about selectors? Check out the <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">MDN documentation.</a></p>
+
+                <h2> Vocabularly Review </h2>
+                <p>Here are some of the CSS terms we've come across so far:</p>
+                <ul>
+                    <li><strong>DOM</strong>, or Document object model, is a tree structure with a node for each HTML element, piece of text, image and any other object in the web page.</li>
+                    <li><strong>Selectors</strong> are one part of the CSS ruleset. They indicate which HTML element(s) the rule is for.</li>
+                    <li><strong>Declaration blocks</strong> are the other part of the CSS ruleset, they say how the rule will modify the elements indicated by selectors.</li>
+                    <li><strong>CSS rules</strong> are composed of a selector followed by a declaration block.</li>
+                    <li><strong>type</strong> is the simplest type of selector. It indicates the name of one type of HTML element (such as em or li)</li>
+                    <li><strong>Class</strong>in HTML is an attribute that groups elements together that you want to have the same style.</li>
+                    <li><strong>id</strong>is an attribute that must be unique to a single element, used to identify it.</li>
+                </ul>
+
+                <h2> Selectors Review</h2>
+                <p> We've now learned about three kind of CSS selectors: <strong>type, class, and ID!</strong> <br>
+                    <strong>Type</strong> selectors are used to apply a style to a particular type of HTML element, like <code>h1</code> or <code>body</code>. Type selectors are written using just the type name.
+
+                    <strong>Class</strong> selectors are used to set the style for multiple HTML elements that have a particular value for the <code>class</code> attribute. You can name a class anything you want! Class selectors are written with a dot before the class: for elements such as <code>&lt;p class="blue"&gt;</code>, the class selector is <code>.blue</code>.
+                    
+                    <strong>ID</strong> selectors are used when the style is being applied to one HTML element, which has to have an <code>id</code> attribute. There can be only one element with a particular <code>id</code> on a page. You can also choose any name you want for an <code>id</code>, just like a <code>class</code>. ID selectors are written using a <code>#</code> sign: for an element such as <code>&lt;div id="sidebar"&gt;</code>, the id selector is #sidebar.</p>
+
+                    <h2>Whats so "cascading" about CSS? find out <a href="https://www.youtube.com/watch?v=iJI-jUCMgoY&feature=emb_logo">here</a></h2>
+                    <p><strong>cascading has to do with how each node in the dom tree gets its styles defined</strong> Any style property defined on a node will apply as a default to all that nodes descendants. Each style property that's defined on a node will cascade  or spill down the tree or to that node's children and descendent. Each node will inheret style from the parent node, however the most specific selector property will apply.  </p>
+
+                    <h2> Units: <a href="https://www.youtube.com/watch?time_continue=2&v=Tfe3jnfMZ08&feature=emb_logo">video</a></h2>
+                    <p>One of the things we can use CSS for is to change the layout of elements on the page. This means we can move them around, change their sizes, reshape them, and change the way they get positioned around each other. In order to talk about where those elements are on the page, we need to have units of measurement. In CSS there are various units we can use. The basic unit of measurement in CSS is the pixel or px for short. Pixels are the unit that you'll see developer tools using tyo measure the size of the boxed element. Normally, a pixel is a single dot of colour on your screen. But computer screens don't all have the same size pixels. In particular, he actual hardware pixels on new mobile devices are really tiny compared to the pixels on older computer screens. So, in CSS, the unit called pixel or px isn't really a hardware pixel instead it's defined as: <mark>being one-ninety sixth of an inch</mark>Nintey-six pixels per inch was the common screen resolution when CSS was being standardized. So that's what the CSS px unit was set to. There are 96 CSS pixels to the inch, which means there are 37.8 pixels to the centimeter.<br><br>
+                    There are other units in css too. One traditional typographic unit is the point, or pt. i.e 12 point font (72 pt = 1 inch). in CSS, points aren't only for font size, but that is where they are most common.<br>
+                    Whilst pixel and point are based on inches, which is a real world measure of length, other CSS units are relative to the size of something else on the page. One of them is <code>em</code> and it is equal to the font size of the text in the element. So if you're using an 18 point font them 1em is 18 points. </p>
+                    
+                    <h3>N.B</h3>
+                    <p>The CSS unit em is named for the size of the letter "M", and comes from print typography. The HTML element <code>&lt;em&gt;</code> is short for "emphasis". They're spelled the same, and often pronounced the same, but they have no other relation between them at all.</p>
+                    
+                    <h2>Boxes: <a href="https://www.youtube.com/watch?v=JxcGkKIRhHo&feature=emb_logo">Video</a></h2>
+                    <p><img src="./box-model.png" alt="box model"><br><br>
+                    We know that when the browser renders html, evey element has an (usually) invisible box around it. These are the boxes you see when looking around pages in developer tools. There are a lot of things we can set about any of these boxes using CSS. There is:</p>
+                    <ul>
+                        <li> Width </li>
+                        <li> Height</li>
+                        <li> Paddding - the space around the contents of the box</li>
+                        <li> Border - which is outside of the box, this is usually invisible.</li>
+                        <li> Margin - the space the browser makes between this box and other boxes.</li>
+                    </ul>
+                    <p> Each of these is a property or selector that you can set a value, measured in CSS units such as pixels or m's. It is also important to note that the padding, border and margin aren't included in the width of an object. (so they add extra width around the sides of the box!).</p>
+
+
+                    <h2>Percentages</h2>
+                    <button id="video"><a href="https://www.youtube.com/watch?v=qW90i9mB38o&feature=emb_logo">Video</a></button>
+                    <p>Often in CSS, we don't want to make a box exactly 200px. Instead you might want to specify how much of the page a box should occupy. However, we don't know how wide the users browser window is. So we cannot say a number of pixels or em for this. We can use a percentage. When we set the width or height of a box to be 50%, we're asking the browser to make it that fraction of the width or height of the box it's inside. For boxes at the top level of our document that makes it 50% of the width of the whole page. For a box within another box, it would be 50% of the width of it's parent box. <mark style="color: red;">BUT!</mark> by default this doesn't include the border and it never includes the padding. CSS also uses percentages for something pretty different - scaling things up or down. <br>
+                    For instance, let's say we want to make strong text even stronger than usual. Can do this by defining a style on the strong element to make the font-size 120%. This means no matter what the actual font-size in points is of the text any text in strong will be expanded to 120% of the strong node's parent font size.  </p>
+
+                    <h2>Seperating style</h2>
+                    <p> There are a couple of ways that we can tell  the browser to apply CSS styles to our html. One of them we've gone through alread - putting the CSS code in the style element. However this can get rather messy. It's common for websites to have many HTML documents, and we want to apply the same styles to all of them. Copying the same CSS code to each of is a waste of space. Another way we can do this is to put the css in a seperate file and link to it in the HTML file. The wat we do this is to put a special style in the HTML head element.</p>
+                    <div  id="code">
+                        <code class="code-block"> &lt; link rel="style" href="URL of the stylesheet file/filename"&gt;</code><br><br>
+                    </div>
+                    
+                    <p> If we're using a style sheet that is somewhere else on the web we'll put a ful URL in here but, if the css file is in the same directory as out html file, then we can just put the file name. When the browser loads this CSS file it will automatically load the style.css file and apply those styles to the elements in this file. <br>
+                        <br>
+                        At this point, you've learned three different ways to apply CSS styles to your HTML elements. It's important to remember: 
+                    <strong> Stylesheet or style element — not both! </strong>
+
+                    </p>
+
+                    <h2> Color</h2>
+                    <button id="video"><a href="https://www.youtube.com/watch?time_continue=178&v=CrnY0UE3bK8&feature=emb_logo">Video</a></button>
+                    <p>So far we've specified colors with words like red and purple but there are only so many words for colors. You should be able to make any colour you want, and you should. Computer screen by mixing red, green and blue light. For each primary you can specify how much of each you want in the mix. Anywhere from 0 to 100% of full brightness. <br> For inance if we mix 100% red with 50% green we'll get a bright orange. One way we can write this in CSS is as RBG: </p>
+                    <div id="code">
+                    <code class="code-block"> body { <br>
+                    background-color: rgb(100%, 50%, 0%); }</code><br><br>
+                    </div>
+                    <p> To make gray, use equal amounts of red, green, and blue. But if all three colors are equal to zero, you'll get black; and if all three are the maximum value (255, FF, or 100%) you'll get white.<br>
+                        There are several different ways we can write colors in CSS.</p>
+                    <div id="code">
+                        <code class="code-block"> .green { <br>
+                        color: #008000; }</code><br><br>
+                        </div>
+                    <p> To understand the last two methods of using colors in CSS you need to know a bit more about how computers store color information in web browsers and most other applications. Each of the primary colors can have 256 possible values. This is beacuase each color is stored in a single <strong>byte</strong> - <mark>(a space in memory that can hold a number from 0 ro 255).</mark>
+                    We can writer a byte values as a number from zero to 255 but we can also write it as a number in <strong>hexadecimal</strong> or hex base 16. In hex each digit can go from 0 to 9 and then from A to F. Hex codes are much harder to figure out but they are traditional on the web. </p>
+                    <div>
+                        <img id="rgb" src="rgb.png" alt="rgb in CSS"/>
+                    </div>
+                    <p> Whilst these methods look different they are similarly describing the amount of red, green and blue that needs to be mixed to make a particular colour. Using a color picker is a great help to decipher the numerical code for the color you would like t implement. Fortunately this is built right into your browsers developer tools </p>
+
+                    <p> We've been using the words "amount" and "intensity". What we really mean by this is the brightness of the light. Higher values indicate brighter (more intense) light, and lower values indicate darker (less intense) light.
+
+                    By mixing different levels of red, green, and blue, we can getdifferent colors, at different levels of brightness.
+                    
+                    By the way, this way of thinking about light isn't limited to our code—if we were to get real, physical lights and overlapthem, we would get similar results.
+                    Red, green, and blue light overlap to create secondary colorsand white light. <br>
+                    OK, but what about hex values, like #00cc66 or #99ccff?<br><br>
+
+                    These look strange, but they work the same way. Each pair of digits is a number that gives the intensity of red, green, or blue. The reason these values look strange is because they're in a different number system—instead of the decimal system that we are used to working with, these numbers are given in the hexadecimal system.<br><br>
+
+                    You don't need to have a deep familiarity with hexadecimal to be able to use hex color values on your pages. <br><br>
+
+                    Hexadecimal is not as complex as it might appear. Instead of having 10 digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), hexadecimal has 16. Since we don't have 16 number symbols, hexadecimal counts up to 9 and then starts using letters.<br><br>
+
+                    The numbers are the same until we get to 10, which is represented as A in hexadecimal.<br><br>
+
+                    Like we mentioned, each pair of digits in a hex RGB value gives the intensity of red, green, or blue. This ranges from 00, meaning zero intensity, to ff, meaning maximum intensity. In fact, the number ff is the same as the decimal number 255.<br><br>
+
+                    Althernatively the <a href="https://www.w3schools.com/colors/colors_picker.asp">W3 schools colour picker is a useful color picker</a>.
+                        </p>
+                    
+                    <h2>Fonts</h2>
+                    <button id="video"><a href="https://www.youtube.com/watch?v=X4yV9LQDAIY&feature=emb_logo">Video</a></button>
+
+                    <p>One of the things that can really make a website more distinctive, is to use fonts that work well together. 
+                    CSS lets you change all sorts of things about the font in which your text gets displayed. What is usually referred to as a font, in miscrosoft word for instance, CSS actually calls this <strong>Font-family</strong> This is name of a type face such as <strong class="TMR">Times New Roman</strong>, <strong class="Hel">Helvitica</strong> or <strong class="imp">Impact.</strong>. <br><br>
+                    Applying a font-family rule to an element will make text in that element show up in that font. However, not every device or browser has the same fonts. If you ask for a font family and the user's device doesn't have it. CSS won't do anything, it'll leave the text in the default font which is usually Times. CSS also offers generic font families. There are five of these named for 5 general catagories of fonts:
+                    <ul>
+                        <li id="serif">Serif</li>
+                        <li id="sans">Sans Serif</li>
+                        <li id="cur">Cursive</li>
+                        <li id="fan">Fantasy</li>
+                        <li id="mono">Monospace</li>
+                    </ul>
+                    <p> Generally these are used as a fallback in case the browser doen't have avvess to a particular font. Because of that CSS lets us wrtite a <strong>font stack </strong> - <mark>A list of font alternatives; the browser will pick the first it can.</mark> We can also control other font settings besides the font-family </p>
+                    <ul>
+                        <li> Font size - how big the text is, measured in points(usually)</li>
+                        <li> font-weight - with the value bold</li>
+                        <li>font-style - can be italic</li>
+                        <li>text-decoration - with the value underline</li>
+                    </ul>
+                    <p> There is a property called font that lets you combine all of these properties into a single line. so instead of writing all these font properties, you can just write this: </p>
+                    <code id="code"> p { font: bold 14pt Georgia, serif; }</code><br><br>
+
+                    <p> Unfortunately you do have to write this in a specific order.</p>
+
+                    <p>If you want to use some interesting fonts, but are worried they won't be installed on all computers, here's another option: You can try out <a href="https://developers.google.com/fonts/docs/getting_started">Google Web Fonts.</a>These don't have to be installed on the user's computer in order to work!
+
+                    Something you may have wondered is why we have both <code><strong></strong></code> and font-weight: bold;. If you want to bold some text, it seems like you could use either of these—and they would have the same results.
+                        
+                    And the same seems to be true of <code><em></em></code> and font-style: italic;.
+                        
+                    Why would we need CSS style properties like font-weight and font-style, when we already have HTML elements like em and strong? <br>
+
+                    There are a couple of reasons for this. <br>
+
+                    The historical reason is that HTML was created before CSS, but the engineers who designed CSS wanted it to provide more customization than HTML alone did. The default way to show emphasis is by styling it as italic. But we don't have to do it that way — we can use CSS to override the default styles. For example, we could say that we want emphasized text to be red, or in a larger font size. <br>
+
+                    But the differences go deeper than that. HTML code isn't only used by browsers that display on the screen. It's also used by search engines, smart speaker apps, and other programs. Those programs can't see "boldface" or "italics", but they still need to know which text on a page is more important. <br>
+
+                    The em and strong elements specify the meaning of their contents. In contrast, the CSS style properties are just specifying the visual appearance. <br>
+
+                    To repeat this in more general terms: the HTML indicates what the contents mean, while the CSS indicates how the contents should look. Web programmers refer to this as semantic markup — using markup to indicate meaning, not just appearance. <br>
+
+                    For example, if we place some text inside an em element, this is our way of indicating that this text should be emphasized in some way. But to a program that's reading the page aloud to the user, it won't use italics; it will use tone of voice. And even in a page that _is_ displayed to the user, you might want it to be emphasized using color or another property, instead of with italics. <br>
+
+                    
+                    </p>
+                  
+
+                    <h2>Containers</h2>
+                    <p> Earlier, we saw that we could put boxes inside other boxes. If those boxes are div elements, then we simply nest the div elements inside one another:<br>
+                    <code>
+                        &lt;div&gt;<br>
+                            &lt;div&gt;
+                           &lt;/div&gt;<br>
+                        &lt;/div&gt;
+                    </code>
+                    One reason to nest boxes like this is so that you can use one of the boxes as a container for the other boxes.
+                    </p>
+
+                    <h2>Flexbox</h2>
+                    <button id="video"><a href="https://www.youtube.com/watch?v=flANhTWKrQg&feature=emb_logo">Video</a></button>
+                    <p>The default way that the browser lays out the boxes onto the page was designed for webpages that work like traditional documents. They're made of things like headlines, paragraphs and lists from top to the bottom. This works greqat for pages such as wikipedia articles, scientific papers or stories. However, a website today can be a lot more than a document. It's a photo gallery or a messaging service, or a game. So the kind of layout that makes sense for a document doesn't always make sense for websites of today. Applications need a much more flexible sort of layout than an article or novel does. CSSS has grown to support that change over time. One of the biggest improvements in the last few years is a feature called the <strong>Flexible Box Layout</strong> or <mark><em>Flexbox</em></mark> for short. It's a way to as CSS to change the rules for how boxes are laid out onto the page in a way that's more flexible than the usual document-based approach. </p>
+                    <div class="container">
+                        <div class="box red">red</div>
+                        <div class="box green">green</div>
+                        <div class="box yellow">yellow</div>
+                      </div>
+
+                      <button id="refence-MDN"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">Take a look at this documentation for the flexible box layout.</a></h2></button> <br>
+
+                      <p> An example of how to apply this is the tic-tac-toe <a href="https://www.youtube.com/watch?v=NalsdNe4Bzo&feature=emb_logo">game</a></p>
+
+                      <div id="container">
+                        <ul>
+                            <li>X
+                            <li>
+                            <li>O
+                    
+                            <li>
+                            <li>X
+                            <li>O
+                    
+                            <li>X
+                            <li>O
+                            <li>
+                        </ul>
+                      </div>
+                      <button id="refence-MDN"><a href="https://www.youtube.com/watch?time_continue=54&v=JwcoSImKvo8&feature=emb_logo">Alternative method.</a></h2></button> <br>
+
+
+                      <button><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">Find more information about CSS here on the MDN CSS website.</a></h2></button>
+
+
+
+                      
 
 
             </div>
