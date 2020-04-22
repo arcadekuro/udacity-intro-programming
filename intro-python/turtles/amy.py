@@ -7,7 +7,7 @@ for side in [1, 2, 3, 4, 5, 6, 7, 8]:
     greg.left(134)
 
 
-lily = turtule.Turtle()
+lily = turtle.Turtle()
 lily.color("turquoise")
 # Width of the line drawn.
 lily.width(5)
