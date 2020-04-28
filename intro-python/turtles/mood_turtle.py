@@ -1,9 +1,10 @@
 mood = "happy"
 
 import turtle
+
 riley = turtle.Turtle()
 riley.width(5)
-git 
+
 
 for side in range(5):
     if mood == "happy":
@@ -16,3 +17,6 @@ for side in range(5):
         riley.color("gray")
     riley.forward(100)
     riley.right(144)
+
+
+    
