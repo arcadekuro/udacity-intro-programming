@@ -1,11 +1,10 @@
 mood = "happy"
 
 import turtle
-from chance import coin_flip
 
 riley = turtle.Turtle()
 riley.width(5)
-git 
+
 
 for side in range(5):
     if mood == "happy":
@@ -20,4 +19,4 @@ for side in range(5):
     riley.right(144)
 
 
-    flip = coin_flip()
+    

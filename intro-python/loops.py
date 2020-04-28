@@ -22,3 +22,8 @@ while index > 0:
     print(f[:index])
     index -= 1
     
+def infinite_loop(s):
+    while s > 0:
+        s += 1
+        print(s)
+
