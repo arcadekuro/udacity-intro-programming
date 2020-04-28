@@ -1,6 +1,8 @@
 mood = "happy"
 
 import turtle
+from chance import coin_flip
+
 riley = turtle.Turtle()
 riley.width(5)
 git 
@@ -16,3 +18,6 @@ for side in range(5):
         riley.color("gray")
     riley.forward(100)
     riley.right(144)
+
+
+    flip = coin_flip()
