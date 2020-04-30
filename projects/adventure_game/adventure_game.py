@@ -1,10 +1,9 @@
 import time
 import random
 
-nouns = ['farie', 'gorgon', 'gnome', 'oni', 'cyclops', 'witch']
-
 
 def random_creature():
+    nouns = ['farie', 'gorgon', 'gnome', 'oni', 'cyclops', 'witch']
     n = random.choice(nouns)
     creature = n
     return creature
@@ -33,9 +32,9 @@ def valid_input(prompt, option1, option2):
     # function for assessing whether players input is valid.
     while True:
         response = input(prompt).lower()
-        if option1 in response:
+        if option1 == response:
             return response
-        elif option2 in response:
+        elif option2 == response:
             return response
         else:
             print_pause("Please try again\n")
@@ -47,11 +46,11 @@ def get_choice(items, creature):
     print_pause("Enter 1 to knock on the door of the house.")
     print_pause("Enter 2 to peer into the cave.")
     choice = valid_input("What would you like to do?\n (Please enter"
-                         "1 or 2)\n", "1", "2")
-    if "1" in choice:
+                         " 1 or 2)\n", "1", "2")
+    if "1" == choice:
         print_pause("You approach the door of the house")
         house(items, creature)
-    elif "2" in choice:
+    elif "2" == choice:
         print_pause("You peer cautiously into the cave")
         cave(items, creature)
     else:
@@ -59,7 +58,6 @@ def get_choice(items, creature):
 
 
 def cave(items, creature):
-    # If
     print_pause("It turns out to be only a very small cave")
     if "sword" not in items:
         items.append("sword")
@@ -88,14 +86,14 @@ def house(items, creature):
 
 def fight(items, creature):
     choice = valid_input("What would you like to do?\n Would you like"
-                         "to (1) fight or (2) run away?", "1", "2")
-    if "1" in choice and "sword" not in items:
+                         " to (1) fight or (2) run away?\n", "1", "2")
+    if "1" == choice and "sword" not in items:
         print_pause("You do your best...")
         print_pause("You lose! You have been defeated!")
         play_again()
-    elif "1" in choice and "sword" in items:
+    elif "1" == choice and "sword" in items:
         print_pause("As the {} moves to attack, you unsheath your"
-                    "new sword.".format(creature))
+                    " new sword.".format(creature))
         print_pause("The Sword of Ogoroth shiens brightly in your"
                     "hand as you brace youself for the attack")
         print_pause("But the {} takes one look at your shiny new"
@@ -103,17 +101,17 @@ def fight(items, creature):
         print_pause("You won! You have rid the town of the {}."
                     "You are victorious!".format(creature))
         play_again()
-    elif "2" in choice:
+    elif "2" == choice:
         print_pause("You run back into the field. Luckily,"
                     "you don't seem to have been followed.")
         get_choice(items, creature)
 
 
-def play_again():
-    response = input("Would you like to play again? \n (y/n)")
-    if "n" in response:
+def play_again(): 
+    response = valid_input("Would you like to play again? (y/n) \n ", "y", "n")
+    if "n" == response:
         print_pause("Thanks for playing! See you next time")
-    if "y" in response:
+    if "y" == response:
         print("Excellent! Restarting the game..")
         adventure_game()
 
